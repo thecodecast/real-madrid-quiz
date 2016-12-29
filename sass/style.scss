@@ -1,8 +1,9 @@
 @import "bourbon/bourbon";
 @import "normalize";
 
-$green: #45CB96;
-$blue: #474283;
+$color1: #F14052;
+$color2: #175AA3;
+$color3: #F7C007;
 
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -15,8 +16,8 @@ html, body, .container {
 
 
 body{
-  background-color: $green;
-  color: $blue;
+  background-color: $color1;
+  color: $color2;
   font-size: 1rem;
   font-weight: 400;
   font-family: 'Raleway';
@@ -57,7 +58,7 @@ a{
 
 .button{
   padding: 0.75em 1.25em;
-  background-color: $blue;
+  background-color: $color2;
   color: #feffff;
   font-size: 12px;
   border-radius: 20px;
@@ -70,8 +71,8 @@ header{
       margin: 0;
       a{
         font-size: 20px;
-        font-weight: bold;
-        color: $blue;
+        font-weight: 900;
+        color: $color1;
         vertical-align: top;
       }
     }
@@ -135,17 +136,18 @@ footer{
   &.current-slide{
     opacity: 1;
     visibility: visible;
+		z-index: 10000;
   }
 
   .slide-trigger{
     display: block;
-    background-color: $blue;
+    background-color: $color2;
     color: #feffff;
     font-size: 24px;
     border: none;
     outline: none;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
     padding: 1em 1.5em;
     border-radius: 100px;
     max-width: 300px;
@@ -168,17 +170,18 @@ footer{
     margin: 0 auto;
     h1{
       font-size: 48px;
-      font-weight: 700;
+      font-weight: 900;
       margin-bottom: 48px;
     }
     h3{
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 700;
       margin-bottom: 48px;
+			color: $color3;
     }
     // button{
     //   display: block;
-    //   background-color: $blue;
+    //   background-color: $color2;
     //   color: #feffff;
     //   font-size: 24px;
     //   border: none;
@@ -239,7 +242,7 @@ footer{
 
   button{
     display: block;
-    background-color: $blue;
+    background-color: $color2;
     border: none;
     outline: none;
     color: #feffff;
@@ -265,7 +268,7 @@ footer{
       font-size: 24px;
       font-weight: 700;
       text-transform: uppercase;
-      color: $green;
+      color: $color1;
     }
   }
 

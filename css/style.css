@@ -148,8 +148,8 @@ html, body, .container {
   height: 100%; }
 
 body {
-  background-color: #45CB96;
-  color: #474283;
+  background-color: #F14052;
+  color: #175AA3;
   font-size: 1rem;
   font-weight: 400;
   font-family: 'Raleway';
@@ -184,7 +184,7 @@ a {
 
 .button {
   padding: 0.75em 1.25em;
-  background-color: #474283;
+  background-color: #175AA3;
   color: #feffff;
   font-size: 12px;
   border-radius: 20px; }
@@ -195,8 +195,8 @@ header {
     margin: 0; }
     header .logo h1 a {
       font-size: 20px;
-      font-weight: bold;
-      color: #474283;
+      font-weight: 900;
+      color: #F14052;
       vertical-align: top; }
   header .contact a {
     display: block;
@@ -233,7 +233,7 @@ footer {
 .fs-title h1 {
   margin: 0;
   font-size: 24px;
-  color: #45CB96;
+  color: #F14052;
   margin-bottom: 24px; }
 
 /* Form */
@@ -246,13 +246,6 @@ footer {
   padding: 0 0 6em 0; }
 
 /* Views (fullscreen and overview)*/
-.fs-form-full {
-  width: 70%; }
-
-.fs-form-full,
-.fs-message-error {
-  max-width: 960px; }
-
 /* Switch view animation (we hide the current view, switch the view class and show it again) */
 .fs-form.fs-show {
   -webkit-animation: animFadeIn 0.5s;
@@ -341,8 +334,13 @@ button.fs-continue,
 .fs-fields > li label.fs-field-label {
   display: inline-block;
   padding-bottom: 36px;
-  font-weight: 700;
+  font-weight: 900;
   pointer-events: none; }
+  .fs-fields > li label.fs-field-label b {
+    color: #F14052;
+    font-size: 30px;
+    margin-left: -45px;
+    margin-right: 6px; }
 
 .fs-form-full .fs-fields > li label[data-info]::after {
   position: relative;
@@ -439,21 +437,68 @@ button.fs-continue,
 
 .fs-fields > li .fs-radio-custom label {
   display: block;
-  width: 120px;
-  height: 120px;
-  background-color: #ddd;
   border-radius: 10px;
-  line-height: 120px;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s;
-  -moz-transition: background-color 0.3s;
-  transition: background-color 0.3s; }
-  .fs-fields > li .fs-radio-custom label:hover {
-    background-color: #474283; }
+  position: relative;
+  -webkit-transition: background-color 0.3s, opacity 0.3s;
+  -moz-transition: background-color 0.3s, opacity 0.3s;
+  transition: background-color 0.3s, opacity 0.3s; }
+  .fs-fields > li .fs-radio-custom label span {
+    position: absolute;
+    left: 50%; }
+  .fs-fields > li .fs-radio-custom label.no-image {
+    background-color: #ddd; }
+    .fs-fields > li .fs-radio-custom label.no-image:hover {
+      background-color: #175AA3; }
+  .fs-fields > li .fs-radio-custom label.no-image span, .fs-fields > li .fs-radio-custom label.color span {
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .fs-fields > li .fs-radio-custom label.with-image, .fs-fields > li .fs-radio-custom label.color {
+    opacity: 0.3; }
+    .fs-fields > li .fs-radio-custom label.with-image:hover, .fs-fields > li .fs-radio-custom label.color:hover {
+      opacity: 1; }
+  .fs-fields > li .fs-radio-custom label.color.color-blond {
+    background-color: #EFB365; }
+  .fs-fields > li .fs-radio-custom label.color.color-brown {
+    background-color: #482E00; }
+  .fs-fields > li .fs-radio-custom label.color.color-black {
+    background-color: #000000; }
+  .fs-fields > li .fs-radio-custom label.color.color-red {
+    background-color: #B05F21; }
+  .fs-fields > li .fs-radio-custom label.with-image span {
+    font-size: 16px;
+    bottom: -2.25em;
+    color: #175AA3;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .fs-fields > li .fs-radio-custom label.option-5 {
+    width: 150px;
+    height: 150px; }
+  .fs-fields > li .fs-radio-custom label.option-4 {
+    width: 200px;
+    height: 200px; }
+    .fs-fields > li .fs-radio-custom label.option-4 img {
+      max-width: 100%;
+      max-height: 100%; }
 
-.fs-fields input[type="radio"]:focus + label,
-.fs-fields input[type="radio"]:checked + label {
-  background-color: #474283; }
+.fs-fields input[type="radio"]:focus + label.no-image,
+.fs-fields input[type="radio"]:checked + label.no-image {
+  background-color: #175AA3; }
+.fs-fields input[type="radio"]:focus + label.with-image, .fs-fields input[type="radio"]:focus + label.color,
+.fs-fields input[type="radio"]:checked + label.with-image,
+.fs-fields input[type="radio"]:checked + label.color {
+  opacity: 1; }
 
 .fs-fields textarea {
   padding: 0.25em;
@@ -506,22 +551,19 @@ button.fs-continue,
 .fs-fields input:focus::-webkit-input-placeholder {
   color: transparent; }
 
-/* Dot navigation */
-.fs-nav-dots {
-  position: absolute;
-  top: 50%;
-  right: 20%;
-  left: auto;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
+.fs-controls {
+  position: fixed;
+  left: 120px;
+  bottom: 48px; }
 
+/* Dot navigation */
 .fs-nav-dots button {
   position: relative;
-  display: block;
+  display: inline-block;
   padding: 0;
-  margin: 8px 0;
-  width: 8px;
-  height: 8px;
+  margin: 0 8px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: transparent;
   -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
@@ -535,7 +577,7 @@ button.fs-continue,
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #474283;
+  background-color: #175AA3;
   content: '';
   text-indent: 0;
   -webkit-backface-visibility: hidden;
@@ -552,7 +594,7 @@ button.fs-continue,
 
 .fs-nav-dots button:hover::before,
 .fs-nav-dots button.fs-dot-current::before {
-  background: #45CB96; }
+  background: #F14052; }
 
 /* Progress bar */
 .fs-progress {
@@ -831,16 +873,17 @@ input[type=text]::-ms-clear {
   z-index: 10; }
   .slide.current-slide {
     opacity: 1;
-    visibility: visible; }
+    visibility: visible;
+    z-index: 10000; }
   .slide .slide-trigger {
     display: block;
-    background-color: #474283;
+    background-color: #175AA3;
     color: #feffff;
     font-size: 24px;
     border: none;
     outline: none;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
     padding: 1em 1.5em;
     border-radius: 100px;
     max-width: 300px;
@@ -854,12 +897,13 @@ input[type=text]::-ms-clear {
     margin: 0 auto; }
     .home-slide .info h1 {
       font-size: 48px;
-      font-weight: 700;
+      font-weight: 900;
       margin-bottom: 48px; }
     .home-slide .info h3 {
       font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 48px; }
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: #F7C007; }
   .home-slide .players-list {
     padding-bottom: 36px; }
     .home-slide .players-list ul {
@@ -892,7 +936,7 @@ input[type=text]::-ms-clear {
     margin-bottom: 16px; }
   .last-slide button {
     display: block;
-    background-color: #474283;
+    background-color: #175AA3;
     border: none;
     outline: none;
     color: #feffff;
@@ -918,7 +962,7 @@ input[type=text]::-ms-clear {
       font-size: 24px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #45CB96; }
+      color: #F14052; }
 
 .slideInRight {
   -webkit-animation: slideInRight 0.4s;

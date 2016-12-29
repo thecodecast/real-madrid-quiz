@@ -445,7 +445,8 @@ button.fs-continue,
   transition: background-color 0.3s, opacity 0.3s; }
   .fs-fields > li .fs-radio-custom label span {
     position: absolute;
-    left: 50%; }
+    left: 50%;
+    font-family: 'Raleway'; }
   .fs-fields > li .fs-radio-custom label.no-image {
     background-color: #ddd; }
     .fs-fields > li .fs-radio-custom label.no-image:hover {

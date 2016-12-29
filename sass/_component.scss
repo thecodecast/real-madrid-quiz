@@ -279,6 +279,7 @@ button.fs-continue,
 	&.no-image, &.color{
 		span{
 			top: 50%;
+			font-weight: 700;
 			@include transform(translate(-50%, -50%));
 		}
 	}
@@ -311,7 +312,7 @@ button.fs-continue,
 			bottom: -2.25em;
 			color: $color2;
 			text-transform: uppercase;
-			font-weight: 700;
+			font-weight: 900;
 			line-height: normal;
 			width: 100%;
 			@include transform(translateX(-50%));

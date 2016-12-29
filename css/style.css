@@ -453,6 +453,7 @@ button.fs-continue,
       background-color: #175AA3; }
   .fs-fields > li .fs-radio-custom label.no-image span, .fs-fields > li .fs-radio-custom label.color span {
     top: 50%;
+    font-weight: 700;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -475,7 +476,7 @@ button.fs-continue,
     bottom: -2.25em;
     color: #175AA3;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
     line-height: normal;
     width: 100%;
     -webkit-transform: translateX(-50%);

@@ -19,9 +19,37 @@
 					</h1>
 				</div>
 				<div class="contact pull-right">
-					<a class="button button-round" href="#">Contact</a>
+					<a id="contact-trigger" class="button button-round" href="#">Contact</a>
 				</div>
 			</header>
+
+			<section class="contact-slide">
+				<div class="wrapper">
+					<div class="col form">
+						<h1>Write Us</h1>
+						<form>
+							<div class="form-field">
+								<input type="text" name="name" placeholder="Name">
+							</div>
+							<div class="form-field">
+								<input type="email" name="email" placeholder="Email">
+							</div>
+							<div class="form-field">
+								<textarea name="message" placeholder="Message"></textarea>
+							</div>
+							<button class="button button-round" type="submit">Send</button>
+						</form>
+					</div>
+					<span class="divider"></span>
+					<div class="col">
+						<h1>Reach Us</h1>
+						<div class="address">
+							<p>3328 Phyllis St, Jacksonville, FL, 32205</p>
+						</div>
+						<button class="button button-round" type="button" name="button">Show on Google Maps</button>
+					</div>
+				</div>
+			</section>
 
 			<section class="slide home-slide" id="home-slide">
 				<div class="players-list">
@@ -400,7 +428,7 @@
 
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
-		<script src="js/minify.js"></script>
+		<script src="js/main.js"></script>
 		<script>
 			(function() {
 				var formWrap = document.getElementById( 'fs-form-wrap' );

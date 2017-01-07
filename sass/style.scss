@@ -32,6 +32,17 @@ body{
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   overflow: hidden;
+
+	&:before{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url(../img/container-bg.jpg) center no-repeat;
+		background-size: cover;
+		opacity: 0.075;
+		background-color: #ffffff;
+	}
 }
 
 a{
@@ -62,10 +73,14 @@ a{
   color: #feffff;
   font-size: 12px;
   border-radius: 20px;
+	border: none;
+	outline: none;
 }
 
 header{
   padding: 24px;
+	z-index: 1;
+	position: relative;
   .logo{
     h1{
       margin: 0;
@@ -136,7 +151,7 @@ footer{
   &.current-slide{
     opacity: 1;
     visibility: visible;
-		z-index: 10000;
+		z-index: 15;
   }
 
   .slide-trigger{
@@ -294,5 +309,104 @@ footer{
 @include keyframes(slideOutLeft){
   to{
     @include transform(translateX(-100%));
+  }
+};
+
+
+
+/*---------------------------------------------------*/
+//Contact
+/*---------------------------------------------------*/
+
+.contact-slide{
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	background-color: rgba(255,255,255,0.5);
+	margin-top: 80px;
+
+	.wrapper{
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	.col{
+		width: 40%;
+		float: left;
+		margin: 5%;
+	}
+
+	.address{
+		p{
+			font-size: 16px;
+			font-weight: 700;
+			margin: 2em 0;
+		}
+	}
+
+	.form{
+		h1{
+
+		}
+		form{
+			.form-field{
+				input, textarea{
+					display: block;
+					width: 100%;
+					border: 2px solid $color2;
+					padding: 1em;
+					outline: none;
+					margin: 1em 0;
+					font-size: 14px;
+					color: $color2;
+					font-weight: 700;
+				}
+
+				input{
+
+				}
+
+				textarea{
+					resize: none;
+					height: 135px;
+				}
+			}
+		}
+	}
+
+	@include transition(opacity 0.3s, visibility 0.3s);
+
+	&.active{
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+.slideInUp{
+  @include animation(slideInUp 0.4s);
+}
+
+@include keyframes(slideInUp){
+  from{
+    @include transform(translateY(100%));
+  }
+  to{
+    @include transform(translateX(0));
+  }
+};
+
+.slideOutDown{
+  @include animation(slideOutDown 0.4s);
+}
+
+@include keyframes(slideOutDown){
+  to{
+    @include transform(translateY(100%));
   }
 };
